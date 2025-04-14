@@ -2,6 +2,14 @@
   "name": "@grapesjs/monorepo",
   "version": "0.0.0",
   "packageManager": "pnpm@9.10.0",
+  "exports": {
+    ".": {
+      "import": "./packages/core/dist/grapes.mjs",
+      "require": "./packages/core/dist/grapes.min.js",
+      "types": "./packages/core/dist/index.d.ts"
+    },
+    "./*": "./*"
+  },
   "scripts": {
     "start": "pnpm --filter grapesjs start",
     "start:docs": "pnpm --filter @grapesjs/docs docs",
